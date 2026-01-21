@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Scientific Calculator</h1>
+        
+        <div class="display-container">
+            <div id="expression" class="expression"></div>
+            <input type="text" id="display" class="display" readonly value="0">
+        </div>
+
+        <div class="calculator-grid">
+            <!-- Memory and Clear Functions -->
+            <button onclick="clearDisplay()" class="btn btn-function">C</button>
+            <button onclick="clearEntry()" class="btn btn-function">CE</button>
+            <button onclick="backspace()" class="btn btn-function">⌫</button>
+            <button onclick="setOperation('/')" class="btn btn-operator">÷</button>
+
+            <!-- Scientific Functions Row 1 -->
+            <button onclick="scientificCalc('sin')" class="btn btn-scientific">sin</button>
+            <button onclick="scientificCalc('cos')" class="btn btn-scientific">cos</button>
+            <button onclick="scientificCalc('tan')" class="btn btn-scientific">tan</button>
+            <button onclick="setOperation('*')" class="btn btn-operator">×</button>
+
+            <!-- Scientific Functions Row 2 -->
+            <button onclick="scientificCalc('log')" class="btn btn-scientific">log</button>
+            <button onclick="scientificCalc('ln')" class="btn btn-scientific">ln</button>
+            <button onclick="scientificCalc('exp')" class="btn btn-scientific">e^x</button>
+            <button onclick="setOperation('-')" class="btn btn-operator">−</button>
+
+            <!-- Number Pad with Functions -->
+            <button onclick="appendNumber('7')" class="btn btn-number">7</button>
+            <button onclick="appendNumber('8')" class="btn btn-number">8</button>
+            <button onclick="appendNumber('9')" class="btn btn-number">9</button>
+            <button onclick="setOperation('+')" class="btn btn-operator">+</button>
+
+            <button onclick="appendNumber('4')" class="btn btn-number">4</button>
+            <button onclick="appendNumber('5')" class="btn btn-number">5</button>
+            <button onclick="appendNumber('6')" class="btn btn-number">6</button>
+            <button onclick="setOperation('pow')" class="btn btn-operator">x^y</button>
+
+            <button onclick="appendNumber('1')" class="btn btn-number">1</button>
+            <button onclick="appendNumber('2')" class="btn btn-number">2</button>
+            <button onclick="appendNumber('3')" class="btn btn-number">3</button>
+            <button onclick="scientificCalc('sqrt')" class="btn btn-scientific">√</button>
+
+            <button onclick="appendNumber('0')" class="btn btn-number">0</button>
+            <button onclick="appendNumber('.')" class="btn btn-number">.</button>
+            <button onclick="toggleSign()" class="btn btn-function">±</button>
+            <button onclick="calculate()" class="btn btn-equals">=</button>
+
+            <!-- Additional Scientific Functions -->
+            <button onclick="insertConstant('pi')" class="btn btn-scientific">π</button>
+            <button onclick="insertConstant('e')" class="btn btn-scientific">e</button>
+            <button onclick="scientificCalc('factorial')" class="btn btn-scientific">n!</button>
+            <button onclick="setOperation('mod')" class="btn btn-operator">mod</button>
+        </div>
+
+        <div id="status" class="status"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
